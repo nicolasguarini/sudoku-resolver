@@ -3,11 +3,20 @@ class Solver:
         self.grid = grid
 
     def solve(self):
-        for i in range(1,10): #cycle through the numbers
-            for j in range(0,9): #cycle through the entire grid
-                for k in range(0,9):
-                    if self.grid[j][k] == 0: #empty slot
-                        pass
+        while True:
+            for i in range(1,10): #cycle through the numbers
+                coordinates = [] #list of coordinates where the current number might work
+
+                for j in range(0,9): #cycle through the entire grid
+                    for k in range(0,9):
+                        if self.grid[j][k] == 0: #empty slot
+                            if not self.check_number_present(i, j, k):
+                                coordinates.append([j, k])
+                
+                #TODO: se su una riga/colonna/box c'è solo UNA coordinata, il numero va in quella coordinata
+            
+            if 0 not in self.grid:
+                return
 
     def check_number_present(self, number, j, k):
         #check row
@@ -56,7 +65,7 @@ class Solver:
         for j in range(j1, j2+1):
             for k in range(k1, k2+1):
                 box.append(self.grid[j][k])
-                
+
         return box
 
 
