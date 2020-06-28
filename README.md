@@ -1,2 +1,2 @@
 # Sudoku Resolver
-Simple sudoku resolver written in Python3
+Simple recursive sudoku resolver written in Python3
