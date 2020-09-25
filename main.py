@@ -2,7 +2,6 @@ from solver import Solver
 import os
 
 def main():
-    """ EXAMPLE GRID:
     sudoku_grid = [
         [5,3,0,0,7,0,0,0,0],
         [6,0,0,1,9,5,0,0,0],
@@ -14,9 +13,9 @@ def main():
         [0,0,0,4,1,9,0,0,5],
         [0,0,0,0,8,0,0,7,9]
     ]
-    """
+    
 
-    grid = input_grid()
+    grid = sudoku_grid
 
     solver = Solver(grid=grid)
     if solver.solve():
